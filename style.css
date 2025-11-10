@@ -434,10 +434,10 @@ img{ max-width:100%; display:block; }
 /* ---------- GEOGRAPHY ---------- */
 /* ---------- GEOGRAPHY ---------- */
 .geography-premium {
-  padding: 100px 0;
+  background: #eef2f7; /* чисто белый фон */
   position: relative;
-  background: linear-gradient( #eef2f7 100%);
   overflow: hidden;
+  z-index: 1; /* фон выше, чем псевдоэлементы */
 }
 
 .geography-premium::before {
@@ -508,14 +508,23 @@ img{ max-width:100%; display:block; }
   color: #0b1b35;
   font-weight: 500;
 }
+/* ---------- Адаптив для мобильных ---------- */
+@media (max-width: 768px) {
+  .geography-premium::before {
+    opacity: 0.15; /* чуть меньше, чтобы фон был белым, карта видна */
+  }
 
+  .geography-premium::after {
+    opacity: 0.02; /* почти прозрачный, фон не темнеет */
+  }
+}
 
 /* ---------- PRICING ---------- */
 .pricing-premium {
-  padding: 100px 0;
-  background: linear-gradient( #eef2f7 100%);
+  background: #eef2f7; /* чисто белый фон */
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .pricing-premium::before {
